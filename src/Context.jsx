@@ -6,12 +6,12 @@ const getInitialDarkMode = () => {
   const prefersDarkMode = window.matchMedia(
     '(prefers-color-scheme:dark)'
   ).matches
-  console.log(prefersDarkMode)
+
   const storedDarkMode = localStorage.getItem('dark-theme')
   if (storedDarkMode === null) {
     return prefersDarkMode
   }
-  return storedDarkMode === true
+  return storedDarkMode === 'true'
 }
 
 const AppProvider = ({ children }) => {
